@@ -28,6 +28,13 @@ Check out a video demo of WellnessBot on my [YouTube channel](https://youtu.be/S
 - [Google Generative AI](https://cloud.google.com/ai/generative): For generating embeddings and responses.
 - [LangChain](https://langchain.com/): For creating conversational chains.
 
+## Mock Data Generation: prompt used to get the data
+```chatGPT
+Give me a famous health and wellness book in PDF which has home remedies to cure acute diseases.
+Pages should be not more that 25. 
+
+```
+
 ## Setup Instructions
 
 ### Prerequisites
