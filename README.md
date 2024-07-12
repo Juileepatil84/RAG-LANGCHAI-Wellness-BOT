@@ -47,7 +47,7 @@ Pages should be not more that 25.
 ### Installation Steps
 1. **Clone the Repository:**
    ```cmd
-   git clone https://github.com/Juileepatil84/RAG-LANGCHAI-Wellness-BOT.git
+   git clone https://github.com/Juileepatil84/RAG-LANGCHAIN-Wellness-BOT.git
 
 2. **Open the Cloned Folder in Visual Studio Code**
    
@@ -131,11 +131,13 @@ To address this, extensive experimentation was conducted to find the balance. Th
 Experimentation and Testing:
 Several iterations of experimentation were carried out with different chunk sizes and overlap values. Each iteration involved testing the system's ability to retrieve relevant context and generate accurate responses.
 
-Evaluation Metrics: Metrics such as retrieval accuracy, response relevance, and user satisfaction were used to evaluate the effectiveness of different configurations.
+Evaluation Metrics: Metrics such as retrieval accuracy score, response relevance, and user satisfaction were used to evaluate the effectiveness of different configurations.
 User Feedback: Feedback from initial users was invaluable in refining the chunking strategy. Their insights helped identify cases where the system performed well and areas that needed improvement.
-Balancing Chunk Size and Overlap:
+
+Balancing Chunk Size and Overlap: Below are methods to balance Chunk Size and Overlap
 
 Optimal Chunk Size: After multiple rounds of testing, an optimal chunk size was determined that balanced detail and manageability. This size was large enough to provide comprehensive context but small enough to be efficiently processed.
+
 Effective Overlap: The chunk overlap was fine-tuned to ensure that important information spanning chunk boundaries was not lost. The overlap was set to a size that maintained context continuity without introducing significant redundancy.
 Leveraging Pinecone and LangChain:
 
