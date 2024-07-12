@@ -7,7 +7,6 @@ Welcome to WellnessBot! This project is a PDF chatbot designed to help you with 
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Setup Instructions](#setup-instructions)
-- [Usage](#usage)
 - [How it Works](#how-it-works)
 - [Future Improvements](#future-improvements)
 - [Contributing](#contributing)
@@ -32,7 +31,7 @@ Check out a video demo of WellnessBot on my [YouTube channel](https://youtu.be/S
 - [Google Generative AI](https://cloud.google.com/ai/generative): For generating embeddings and responses.
 - [LangChain](https://langchain.com/): For creating conversational chains.
 
-## Setup and Installation
+## Setup Instructions
 
 ### Prerequisites
 - Python 3.8 or higher
@@ -58,7 +57,7 @@ Check out a video demo of WellnessBot on my [YouTube channel](https://youtu.be/S
 
 4. **Create a .env File:**
 
-   Inside your project directory, create a .env file to store your GOOGLE_API_KEY.
+   Inside your project directory, create a .env file to store your GOOGLE_API_KEY and PINECONE_API_KEY.
 
 6. **Create Requirements File:**
 
@@ -69,11 +68,27 @@ Check out a video demo of WellnessBot on my [YouTube channel](https://youtu.be/S
      pip install -r requirements.txt
 ```  
 
-8. **Create the Streamlit App File:**
+8. **Create the vector datapase creation and Streamlit App File:**
    `
-   Ensure app.py is set up and ready by this step as the dependencies are installed. You can also use app.py from cloned repository directly.
+   Ensure app.py and vdb.py is set up and ready by this step as the dependencies are installed. You can also use app.py and vdb.py from cloned repository directly.
+   vdb.py will create index in pinecone vector database if it doesnt exist and upload embedding and chunks from pdf.
 
-9. **Run the Application**
+   Make sure you run vdb.py to create db and load data before runnig streamlit app. 
+
+10. **Run the Application**
    ```
+   ## Create database 
+   Python vdb.py
+   ## Run the web application
    streamlit run app.py
+   ```
+##### Open your web browser and go to http://localhost:8501
 
+### How it Works
+WellnessBot uses Retrieval-Augmented Generation (RAG) to provide accurate and contextually rich answers to health-related questions based on the content of a PDF. Here’s a brief overview of the process:
+
+- User Input: The user asks a question via the Streamlit web interface.
+- Embedding Generation: The question is converted into embeddings using Google Generative AI.
+- Context Retrieval: Pinecone searches for relevant context in the PDF based on the embeddings.
+- Response Generation: LangChain uses the retrieved context to generate a comprehensive answer.
+- Display: The answer is displayed on the web interface.
