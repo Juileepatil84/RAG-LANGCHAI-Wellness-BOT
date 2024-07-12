@@ -84,7 +84,7 @@ Check out a video demo of WellnessBot on my [YouTube channel](https://youtu.be/S
    ```
 ##### Open your web browser and go to http://localhost:8501
 
-### How it Works
+## How it Works
 WellnessBot uses Retrieval-Augmented Generation (RAG) to provide accurate and contextually rich answers to health-related questions based on the content of a PDF. Here’s a brief overview of the process:
 
 - User Input: The user asks a question via the Streamlit web interface.
@@ -92,3 +92,23 @@ WellnessBot uses Retrieval-Augmented Generation (RAG) to provide accurate and co
 - Context Retrieval: Pinecone searches for relevant context in the PDF based on the embeddings.
 - Response Generation: LangChain uses the retrieved context to generate a comprehensive answer.
 - Display: The answer is displayed on the web interface.
+
+### Code Explanation
+app.py:
+Sets up the Streamlit web interface.
+Handles user inputs and displays the chat history.
+Integrates with Pinecone and Google Generative AI to process queries and generate responses.
+
+vdb.py:
+Extracts text from PDF files.
+Chunks the extracted text for efficient processing.
+Generates embeddings for the text chunks.
+Upserts the embeddings into Pinecone for context retrieval.
+
+requirements.txt:
+Lists all the dependencies required for the project.
+
+## Future Improvements
+- Add support for more file formats.
+- Improve the accuracy of responses with advanced NLP techniques.
+- Add user authentication for personalized experiences.
